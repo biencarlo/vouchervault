@@ -1,0 +1,1743 @@
+/* ==========================================================================
+   Voucher Vault — Material Design 3 (M3 Expressive) Stylesheet
+   Primary Blue Theme · Bright Green Active · Light Red Expiring Soon
+   Outright Google Sans Typography
+   ========================================================================== */
+
+:root {
+  /* M3 Expressive Light Theme Color Tokens (Google Royal Blue Seed) */
+  --md-sys-color-primary: #0b57d0;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #d3e3fd;
+  --md-sys-color-on-primary-container: #041e49;
+
+  --md-sys-color-secondary: #3b5ba9;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #dae2ff;
+  --md-sys-color-on-secondary-container: #001847;
+
+  --md-sys-color-tertiary: #00639b;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #cee5ff;
+  --md-sys-color-on-tertiary-container: #001d32;
+
+  /* Active Voucher Tokens — Bright Vibrant Green (Like standard voucher apps) */
+  --md-sys-color-active: #00a843;
+  --md-sys-color-on-active: #ffffff;
+  --md-sys-color-active-container: #bdf8cf;
+  --md-sys-color-on-active-container: #003913;
+  --md-sys-color-active-pill-bg: #12b850;
+  --md-sys-color-active-pill-fg: #ffffff;
+
+  /* Expiring Soon Tokens — Light Red / Rose-Crimson Highlight */
+  --md-sys-color-warning: #d93025;
+  --md-sys-color-on-warning: #ffffff;
+  --md-sys-color-warning-container: #ffd8d6;
+  --md-sys-color-on-warning-container: #690005;
+  --md-sys-color-warning-surface: #ffeceb;
+
+  /* Error / Expired Tokens */
+  --md-sys-color-error: #9e2a2b;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #f2dede;
+  --md-sys-color-on-error-container: #410002;
+
+  /* M3 Blue-Tinted Surface & Container Hierarchy */
+  --md-sys-color-background: #f6f8fc;
+  --md-sys-color-on-background: #181c22;
+  --md-sys-color-surface: #f6f8fc;
+  --md-sys-color-on-surface: #181c22;
+  --md-sys-color-on-surface-variant: #44474e;
+
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #f0f4f9;
+  --md-sys-color-surface-container: #e9eef6;
+  --md-sys-color-surface-container-high: #e3e8f0;
+  --md-sys-color-surface-container-highest: #dde3ea;
+
+  --md-sys-color-outline: #74777f;
+  --md-sys-color-outline-variant: #c4c6d0;
+  --md-sys-color-inverse-surface: #2d3138;
+  --md-sys-color-inverse-on-surface: #eef1f8;
+  --md-sys-color-inverse-primary: #a8c7fa;
+
+  /* M3 Expressive Shape Tokens */
+  --md-shape-xs: 8px;
+  --md-shape-sm: 12px;
+  --md-shape-md: 16px;
+  --md-shape-lg: 20px;
+  --md-shape-xl: 24px;
+  --md-shape-2xl: 28px;
+  --md-shape-pill: 9999px;
+
+  /* M3 Elevation Shadows (Cool Blue-Slate Tint) */
+  --md-elevation-1: 0 1px 3px rgba(11, 45, 110, 0.06), 0 1px 2px rgba(11, 45, 110, 0.04);
+  --md-elevation-2: 0 5px 14px rgba(11, 45, 110, 0.09), 0 2px 4px rgba(11, 45, 110, 0.05);
+  --md-elevation-3: 0 10px 26px rgba(11, 45, 110, 0.16), 0 3px 8px rgba(11, 45, 110, 0.08);
+
+  /* Expressive Spring Motion */
+  --md-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --md-ease-spatial: cubic-bezier(0.22, 1.25, 0.36, 1);
+  --md-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Outright Google Sans Typography (No fallback fonts) */
+  --font-sans: 'Google Sans';
+  --font-display: 'Google Sans';
+  --font-mono: 'Google Sans';
+
+  color-scheme: light;
+}
+
+/* M3 Expressive Dark Theme Color Tokens (Deep Navy Blue Seed) */
+[data-theme="dark"] {
+  --md-sys-color-primary: #a8c7fa;
+  --md-sys-color-on-primary: #062e6f;
+  --md-sys-color-primary-container: #0842a0;
+  --md-sys-color-on-primary-container: #d3e3fd;
+
+  --md-sys-color-secondary: #b2c5ff;
+  --md-sys-color-on-secondary: #022978;
+  --md-sys-color-secondary-container: #21428f;
+  --md-sys-color-on-secondary-container: #dae2ff;
+
+  --md-sys-color-tertiary: #96ccff;
+  --md-sys-color-on-tertiary: #003353;
+  --md-sys-color-tertiary-container: #004a76;
+  --md-sys-color-on-tertiary-container: #cee5ff;
+
+  /* Active Voucher Tokens — Bright Vibrant Green (Dark Mode) */
+  --md-sys-color-active: #26e068;
+  --md-sys-color-on-active: #003913;
+  --md-sys-color-active-container: #005c22;
+  --md-sys-color-on-active-container: #8cfbaa;
+  --md-sys-color-active-pill-bg: #16c656;
+  --md-sys-color-active-pill-fg: #00260b;
+
+  /* Expiring Soon Tokens — Light Red Surface & Vibrant Coral-Red Badge (Dark Mode) */
+  --md-sys-color-warning: #ff8982;
+  --md-sys-color-on-warning: #5c0004;
+  --md-sys-color-warning-container: #7d1511;
+  --md-sys-color-on-warning-container: #ffd9d6;
+  --md-sys-color-warning-surface: #341618;
+
+  /* Error / Expired Tokens */
+  --md-sys-color-error: #ffb4ab;
+  --md-sys-color-on-error: #690005;
+  --md-sys-color-error-container: #5c1919;
+  --md-sys-color-on-error-container: #ffdad6;
+
+  --md-sys-color-background: #0e131b;
+  --md-sys-color-on-background: #e2e7f0;
+  --md-sys-color-surface: #0e131b;
+  --md-sys-color-on-surface: #e2e7f0;
+  --md-sys-color-on-surface-variant: #c4c6d0;
+
+  --md-sys-color-surface-container-lowest: #090d14;
+  --md-sys-color-surface-container-low: #151b24;
+  --md-sys-color-surface-container: #1a212c;
+  --md-sys-color-surface-container-high: #232b38;
+  --md-sys-color-surface-container-highest: #2e3746;
+
+  --md-sys-color-outline: #8e9099;
+  --md-sys-color-outline-variant: #44474e;
+  --md-sys-color-inverse-surface: #e2e7f0;
+  --md-sys-color-inverse-on-surface: #2d3138;
+  --md-sys-color-inverse-primary: #0b57d0;
+
+  --md-elevation-1: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --md-elevation-2: 0 6px 16px rgba(0, 0, 0, 0.48);
+  --md-elevation-3: 0 12px 28px rgba(0, 0, 0, 0.65);
+
+  color-scheme: dark;
+}
+
+/* ==========================================================================
+   Reset & Base Setup
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  font-family: 'Google Sans';
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: 'Google Sans';
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-surface);
+  transition: background-color 0.25s var(--md-ease-standard), color 0.25s var(--md-ease-standard);
+  overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: 'Google Sans';
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   Mobile-First App Shell Container
+   ========================================================================== */
+.app-shell {
+  max-width: 640px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  padding-bottom: 108px;
+  position: relative;
+}
+
+/* ==========================================================================
+   M3 Top App Bar (Blue Accent)
+   ========================================================================== */
+.top-app-bar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+  background-color: color-mix(in srgb, var(--md-sys-color-surface) 88%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid color-mix(in srgb, var(--md-sys-color-outline-variant) 45%, transparent);
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--md-shape-md);
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--md-elevation-1);
+  flex-shrink: 0;
+}
+
+.app-title {
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.25;
+  color: var(--md-sys-color-on-surface);
+}
+
+.app-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-top: 2px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--md-sys-color-active);
+  display: inline-block;
+}
+
+.top-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.m3-icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--md-shape-pill);
+  display: inline-grid;
+  place-items: center;
+  background-color: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+}
+
+.m3-icon-btn:hover {
+  background-color: var(--md-sys-color-surface-container-high);
+}
+
+/* Theme Icon visibility */
+:root .icon-sun {
+  display: none;
+}
+:root .icon-moon {
+  display: block;
+}
+[data-theme="dark"] .icon-sun {
+  display: block;
+}
+[data-theme="dark"] .icon-moon {
+  display: none;
+}
+
+.install-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: var(--md-shape-pill);
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Main Content Layout
+   ========================================================================== */
+.main-content {
+  padding: 14px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ==========================================================================
+   Expressive Summary Hero Strip
+   ========================================================================== */
+.summary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.summary-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 11px 12px;
+  border-radius: var(--md-shape-lg);
+  background-color: var(--md-sys-color-surface-container-low);
+  text-align: left;
+  min-height: 68px;
+}
+
+.summary-pill:hover {
+  background-color: var(--md-sys-color-surface-container);
+}
+
+.summary-pill.is-active-filter {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: -2px;
+}
+
+/* Active Summary Pill — Bright Green */
+.summary-pill--active {
+  background-color: var(--md-sys-color-active-container);
+  color: var(--md-sys-color-on-active-container);
+}
+
+/* Expiring Soon Summary Pill — Light Red */
+.summary-pill--expiring {
+  background-color: var(--md-sys-color-warning-container);
+  color: var(--md-sys-color-on-warning-container);
+}
+
+.summary-count {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.summary-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-top: 4px;
+  line-height: 1.15;
+}
+
+/* ==========================================================================
+   Search & Sort Control Bar
+   ========================================================================== */
+.search-sort-bar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.m3-search-field {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--md-sys-color-surface-container);
+  border-radius: var(--md-shape-pill);
+  height: 46px;
+  padding: 0 14px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.m3-search-field:focus-within {
+  background-color: var(--md-sys-color-surface-container-highest);
+  box-shadow: 0 0 0 2px var(--md-sys-color-primary);
+}
+
+.search-icon {
+  color: var(--md-sys-color-primary);
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.m3-search-field input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--md-sys-color-on-surface);
+}
+
+.m3-search-field input::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 0.8;
+}
+
+.clear-search-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: var(--md-sys-color-surface-container-high);
+  flex-shrink: 0;
+}
+
+.m3-sort-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--md-sys-color-surface-container);
+  border-radius: var(--md-shape-pill);
+  height: 46px;
+  padding: 0 14px;
+  flex-shrink: 0;
+}
+
+.m3-sort-select {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+  padding-right: 4px;
+  cursor: pointer;
+}
+
+.m3-sort-select option {
+  background-color: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* ==========================================================================
+   Filter Chips Rows (Platform Chips with Brand Logos & Status Chips)
+   ========================================================================== */
+.filters-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chip-scroll-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.chip-scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.m3-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 13px;
+  border-radius: var(--md-shape-sm);
+  background-color: var(--md-sys-color-surface-container-low);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.82rem;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.m3-filter-chip:hover {
+  background-color: var(--md-sys-color-surface-container);
+}
+
+.m3-filter-chip.is-selected {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  border-color: var(--md-sys-color-primary);
+  border-radius: var(--md-shape-pill);
+}
+
+.m3-filter-chip--manage {
+  border-style: dashed;
+  border-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-primary);
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 7%, transparent);
+}
+
+.chip-count {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: var(--md-shape-pill);
+  background-color: color-mix(in srgb, currentColor 14%, transparent);
+}
+
+/* Brand Platform Icon Badge (Atome, Lazada, Shopee, GlobeOne, Custom) */
+.platform-logo-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.platform-logo-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Status Chips Row */
+.m3-status-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 14px;
+  border-radius: var(--md-shape-pill);
+  background-color: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.m3-status-chip:hover {
+  background-color: var(--md-sys-color-surface-container-high);
+}
+
+.m3-status-chip.is-selected {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+.m3-status-chip--active.is-selected {
+  background-color: var(--md-sys-color-active-pill-bg);
+  color: var(--md-sys-color-active-pill-fg);
+}
+
+.m3-status-chip--urgent.is-selected {
+  background-color: var(--md-sys-color-warning);
+  color: var(--md-sys-color-on-warning);
+}
+
+/* ==========================================================================
+   Section Header
+   ========================================================================== */
+.list-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 2px 0;
+}
+
+.list-section-title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.m3-text-btn {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--md-sys-color-primary);
+  padding: 4px 10px;
+  border-radius: var(--md-shape-pill);
+}
+
+.m3-text-btn:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 12%, transparent);
+}
+
+/* ==========================================================================
+   M3 Expressive Voucher Cards
+   ========================================================================== */
+.voucher-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.voucher-card {
+  position: relative;
+  background-color: var(--md-sys-color-surface-container-lowest);
+  border-radius: var(--md-shape-xl);
+  padding: 16px 16px 14px;
+  box-shadow: var(--md-elevation-1);
+  border: 1px solid color-mix(in srgb, var(--md-sys-color-outline-variant) 45%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+[data-theme="dark"] .voucher-card {
+  background-color: var(--md-sys-color-surface-container-low);
+}
+
+/* Expiring Soon — Light Red Surface Highlight */
+.voucher-card.is-expiring-soon {
+  background-color: var(--md-sys-color-warning-surface);
+  border-color: color-mix(in srgb, var(--md-sys-color-warning) 52%, var(--md-sys-color-outline-variant));
+}
+
+/* Used & Expired Tonal Muting */
+.voucher-card.is-used {
+  background-color: var(--md-sys-color-surface-container-low);
+  opacity: 0.86;
+}
+
+.voucher-card.is-expired {
+  background-color: var(--md-sys-color-surface-container-low);
+  opacity: 0.72;
+}
+
+/* Card Top Row: Dynamic Platform Pill (Colored by --plat-color) + Status/Urgency Badge */
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 12px 0 8px;
+  border-radius: var(--md-shape-pill);
+  font-size: 0.78rem;
+  font-weight: 500;
+  background-color: color-mix(in srgb, var(--plat-color, #0b57d0) 15%, var(--md-sys-color-surface-container-lowest));
+  color: color-mix(in srgb, var(--plat-color, #0b57d0) 82%, var(--md-sys-color-on-surface));
+  border: 1px solid color-mix(in srgb, var(--plat-color, #0b57d0) 32%, transparent);
+}
+
+[data-theme="dark"] .platform-badge {
+  background-color: color-mix(in srgb, var(--plat-color, #a8c7fa) 24%, var(--md-sys-color-surface-container));
+  color: color-mix(in srgb, var(--plat-color, #a8c7fa) 65%, #ffffff);
+  border-color: color-mix(in srgb, var(--plat-color, #a8c7fa) 42%, transparent);
+}
+
+.card-badges-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Expiring Soon Pill Badge — Light Red */
+.urgency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--md-shape-pill);
+  background-color: var(--md-sys-color-warning-container);
+  color: var(--md-sys-color-on-warning-container);
+  font-size: 0.74rem;
+  font-weight: 500;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 26px;
+  padding: 0 11px;
+  border-radius: var(--md-shape-pill);
+  font-size: 0.74rem;
+  font-weight: 500;
+}
+
+/* Active Voucher Badge — Bright Green (like popular voucher apps) */
+.status-badge--Active {
+  background-color: var(--md-sys-color-active-pill-bg);
+  color: var(--md-sys-color-active-pill-fg);
+}
+
+.status-badge--Used {
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.status-badge--Expired {
+  background-color: var(--md-sys-color-error-container);
+  color: var(--md-sys-color-on-error-container);
+}
+
+/* Card Main Body */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.voucher-title {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--md-sys-color-on-surface);
+}
+
+.voucher-card.is-used .voucher-title {
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.voucher-desc {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--md-sys-color-on-surface-variant);
+  line-height: 1.43;
+}
+
+/* Copyable Promo Code Ticket Strip */
+.promo-code-bar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 2px;
+  padding: 6px 10px 6px 12px;
+  border-radius: var(--md-shape-sm);
+  background-color: var(--md-sys-color-surface-container);
+  border: 1px dashed var(--md-sys-color-outline-variant);
+  max-width: fit-content;
+}
+
+.promo-code-text {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--md-sys-color-on-surface);
+}
+
+.copy-code-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--md-sys-color-primary);
+  padding: 2px 8px;
+  border-radius: var(--md-shape-xs);
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 12%, transparent);
+}
+
+/* Dates Metadata Row */
+.card-dates-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid color-mix(in srgb, var(--md-sys-color-outline-variant) 35%, transparent);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.date-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.date-item--expiry.is-urgent {
+  color: var(--md-sys-color-warning);
+  font-weight: 500;
+}
+
+.date-item--expiry.is-past {
+  color: var(--md-sys-color-error);
+}
+
+/* Card Footer Actions: One-Tap Used Toggle + Edit + Delete */
+.card-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.one-tap-used-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: var(--md-shape-pill);
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
+.one-tap-used-btn.is-restore {
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.card-icon-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-action-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--md-shape-pill);
+  display: inline-grid;
+  place-items: center;
+  background-color: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.card-action-icon-btn:hover {
+  background-color: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+}
+
+.card-action-icon-btn--delete:hover {
+  background-color: var(--md-sys-color-warning-container);
+  color: var(--md-sys-color-on-warning-container);
+}
+
+/* ==========================================================================
+   Empty State
+   ========================================================================== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 44px 24px;
+  background-color: var(--md-sys-color-surface-container-low);
+  border-radius: var(--md-shape-2xl);
+  border: 1px dashed var(--md-sys-color-outline-variant);
+  margin-top: 6px;
+}
+
+.empty-illustration {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--md-shape-xl);
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+}
+
+.empty-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: 6px;
+}
+
+.empty-description {
+  font-size: 0.86rem;
+  color: var(--md-sys-color-on-surface-variant);
+  max-width: 300px;
+  margin-bottom: 18px;
+}
+
+.empty-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   M3 Expressive Extended Floating Action Button (FAB — Primary Blue)
+   ========================================================================== */
+.m3-fab {
+  position: fixed;
+  right: max(16px, calc((100vw - 640px) / 2 + 16px));
+  bottom: 22px;
+  z-index: 35;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 56px;
+  padding: 0 22px 0 16px;
+  border-radius: var(--md-shape-lg);
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  font-size: 0.94rem;
+  font-weight: 500;
+  box-shadow: var(--md-elevation-3);
+}
+
+/* ==========================================================================
+   M3 Bottom Sheet Modal (Add / Edit Voucher & Platform Manager)
+   ========================================================================== */
+.m3-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: rgba(8, 16, 30, 0.54);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.m3-bottom-sheet {
+  width: 100%;
+  max-width: 600px;
+  max-height: 92dvh;
+  overflow-y: auto;
+  background-color: var(--md-sys-color-surface-container-low);
+  border-radius: var(--md-shape-2xl) var(--md-shape-2xl) 0 0;
+  padding: 10px 20px 26px;
+  box-shadow: var(--md-elevation-3);
+  animation: slideUpSheet 0.28s var(--md-ease-spring);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUpSheet {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.sheet-drag-handle {
+  width: 36px;
+  height: 4px;
+  border-radius: var(--md-shape-pill);
+  background-color: var(--md-sys-color-outline-variant);
+  margin: 4px auto 12px;
+}
+
+.sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.sheet-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.sheet-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.m3-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.field-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.m3-inline-link-btn {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--md-sys-color-primary);
+  padding: 2px 8px;
+  border-radius: var(--md-shape-pill);
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 10%, transparent);
+}
+
+.m3-inline-link-btn:hover {
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 18%, transparent);
+}
+
+.m3-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.m3-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.required-star {
+  color: var(--md-sys-color-warning);
+}
+
+.optional-tag {
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.m3-input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border-radius: var(--md-shape-md);
+  border: 1.5px solid var(--md-sys-color-outline-variant);
+  background-color: var(--md-sys-color-surface-container-lowest);
+  color: var(--md-sys-color-on-surface);
+  font-size: 0.92rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.m3-input--sm {
+  height: 38px;
+  font-size: 0.85rem;
+  padding: 0 12px;
+}
+
+[data-theme="dark"] .m3-input {
+  background-color: var(--md-sys-color-surface-container);
+}
+
+.m3-input:focus {
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent);
+}
+
+.m3-input--mono {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.m3-textarea {
+  height: auto;
+  padding: 10px 14px;
+  resize: vertical;
+  min-height: 64px;
+}
+
+/* Platform Radio Pills */
+.platform-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 460px) {
+  .platform-selector-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.platform-radio-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  height: 42px;
+  padding: 0 11px;
+  border-radius: var(--md-shape-md);
+  border: 1.5px solid var(--md-sys-color-outline-variant);
+  background-color: var(--md-sys-color-surface-container-lowest);
+  font-size: 0.83rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.22s var(--md-ease-spring);
+}
+
+[data-theme="dark"] .platform-radio-pill {
+  background-color: var(--md-sys-color-surface-container);
+}
+
+.platform-radio-pill input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.platform-radio-pill:has(input:checked) {
+  border-color: var(--plat-color, var(--md-sys-color-primary));
+  background-color: color-mix(in srgb, var(--plat-color, var(--md-sys-color-primary)) 16%, var(--md-sys-color-surface-container-lowest));
+  color: var(--md-sys-color-on-surface);
+  border-radius: var(--md-shape-pill);
+  box-shadow: 0 0 0 1px var(--plat-color, var(--md-sys-color-primary));
+}
+
+/* Custom Platform & Tag Color Manager Panel */
+.platform-customizer-panel {
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-radius: var(--md-shape-lg);
+  background-color: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.customizer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.customizer-add-block {
+  padding-top: 10px;
+  border-top: 1px solid color-mix(in srgb, var(--md-sys-color-outline-variant) 45%, transparent);
+}
+
+.customizer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.customizer-title {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.sheet-title-lockup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.m3-palette-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--md-shape-sm);
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+/* Material Design 3 16-Color Circular Swatch Grid (8x2) */
+.m3-palette-card {
+  padding: 12px 14px;
+  border-radius: var(--md-shape-lg);
+  background-color: var(--md-sys-color-surface-container);
+  border: 1px solid color-mix(in srgb, var(--md-sys-color-outline-variant) 45%, transparent);
+}
+
+.m3-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px 8px;
+  justify-items: center;
+  padding: 4px 0 2px;
+}
+
+.m3-color-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--swatch-color, #0b57d0);
+  color: #ffffff;
+  display: inline-grid;
+  place-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+  transition: transform 0.24s var(--md-ease-spring), box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .m3-color-circle {
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.m3-color-circle:hover {
+  transform: scale(1.15) translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.26);
+}
+
+.m3-color-circle:active {
+  transform: scale(0.9);
+}
+
+.m3-color-circle svg {
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 0.2s ease, transform 0.24s var(--md-ease-spring);
+}
+
+.m3-color-circle.is-selected {
+  transform: scale(1.14);
+  border-color: #ffffff;
+  box-shadow: 0 0 0 2.5px var(--swatch-color, var(--md-sys-color-primary)), 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.m3-color-circle.is-selected svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.add-platform-inline-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Standalone Manage Platforms Selectable Pill List */
+.manage-platforms-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.manage-platform-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px 5px 6px;
+  border-radius: var(--md-shape-pill);
+  background-color: var(--md-sys-color-surface-container);
+  border: 1.5px solid color-mix(in srgb, var(--md-sys-color-outline-variant) 55%, transparent);
+  cursor: pointer;
+  transition: all 0.22s var(--md-ease-spring);
+}
+
+.manage-platform-item:hover {
+  transform: translateY(-1.5px);
+  background-color: var(--md-sys-color-surface-container-high);
+}
+
+.manage-platform-item.is-selected {
+  border-color: var(--plat-color, var(--md-sys-color-primary));
+  background-color: color-mix(in srgb, var(--plat-color, var(--md-sys-color-primary)) 16%, var(--md-sys-color-surface-container-lowest));
+  box-shadow: 0 0 0 1.5px var(--plat-color, var(--md-sys-color-primary));
+}
+
+.manage-platform-delete-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: color-mix(in srgb, var(--md-sys-color-on-surface) 10%, transparent);
+  font-size: 0.72rem;
+}
+
+.manage-platform-delete-btn:hover {
+  background-color: var(--md-sys-color-warning-container);
+  color: var(--md-sys-color-on-warning-container);
+}
+
+/* Quick Date Preset Chips */
+.quick-date-presets {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: -4px;
+}
+
+.preset-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-right: 2px;
+}
+
+.m3-preset-chip {
+  height: 28px;
+  padding: 0 10px;
+  border-radius: var(--md-shape-pill);
+  background-color: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+  font-size: 0.74rem;
+  font-weight: 500;
+}
+
+.m3-preset-chip:hover {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.field-error {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--md-sys-color-warning);
+}
+
+/* Modal Footer Buttons */
+.sheet-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.m3-filled-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: var(--md-shape-pill);
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.m3-filled-btn--sm {
+  height: 38px;
+  padding: 0 16px;
+  font-size: 0.84rem;
+}
+
+.m3-tonal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: var(--md-shape-pill);
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.m3-tonal-btn--sm {
+  height: 38px;
+  padding: 0 14px;
+  font-size: 0.82rem;
+}
+
+/* ==========================================================================
+   M3 Snackbar
+   ========================================================================== */
+.m3-snackbar {
+  position: fixed;
+  left: 50%;
+  bottom: 90px;
+  transform: translateX(-50%);
+  z-index: 60;
+  width: calc(100% - 32px);
+  max-width: 460px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border-radius: var(--md-shape-md);
+  background-color: var(--md-sys-color-inverse-surface);
+  color: var(--md-sys-color-inverse-on-surface);
+  box-shadow: var(--md-elevation-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  animation: snackbarIn 0.22s var(--md-ease-spring);
+}
+
+@keyframes snackbarIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 16px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.snackbar-message {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.snackbar-action-btn {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--md-sys-color-inverse-primary);
+  padding: 4px 8px;
+  border-radius: var(--md-shape-xs);
+  flex-shrink: 0;
+}
+
+/* Mobile Responsive Adjustments for Very Narrow Screens */
+@media (max-width: 380px) {
+  .summary-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .m3-field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   M3 Expressive Lively Micro-Interactions, Ripples & Spring Physics
+   ========================================================================== */
+button,
+.platform-radio-pill,
+.summary-pill {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.m3-ink-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0.18;
+  transform: scale(0);
+  pointer-events: none;
+  animation: m3RippleExpand 0.52s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+@keyframes m3RippleExpand {
+  0% {
+    transform: scale(0);
+    opacity: 0.22;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0.12;
+  }
+  100% {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+}
+
+/* Staggered Card Spring Entrance & Interactive Hover Lift */
+.voucher-card {
+  animation: m3CardEntrance 0.42s var(--md-ease-spatial) both;
+  animation-delay: calc(var(--card-index, 0) * 45ms);
+  transition:
+    transform 0.28s var(--md-ease-spring),
+    box-shadow 0.28s var(--md-ease-standard),
+    border-color 0.22s ease,
+    background-color 0.22s ease;
+}
+
+@keyframes m3CardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.voucher-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--md-elevation-2);
+  border-color: color-mix(in srgb, var(--md-sys-color-primary) 38%, var(--md-sys-color-outline-variant));
+}
+
+.summary-pill {
+  transition:
+    transform 0.28s var(--md-ease-spring),
+    border-radius 0.28s var(--md-ease-spring),
+    box-shadow 0.22s ease,
+    background-color 0.2s ease;
+}
+
+.summary-pill:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--md-elevation-2);
+}
+
+.summary-pill:active {
+  transform: scale(0.92);
+  border-radius: var(--md-shape-xl);
+}
+
+.m3-filter-chip,
+.m3-status-chip,
+.m3-preset-chip {
+  transition:
+    transform 0.26s var(--md-ease-spring),
+    border-radius 0.26s var(--md-ease-spring),
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.m3-filter-chip:hover,
+.m3-status-chip:hover {
+  transform: translateY(-1.5px);
+  box-shadow: var(--md-elevation-1);
+}
+
+.m3-filter-chip:active,
+.m3-status-chip:active {
+  transform: scale(0.91);
+}
+
+.one-tap-used-btn {
+  transition:
+    transform 0.28s var(--md-ease-spring),
+    border-radius 0.28s var(--md-ease-spring),
+    background-color 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.18s ease;
+}
+
+.one-tap-used-btn:hover {
+  transform: translateY(-1.5px);
+  box-shadow: var(--md-elevation-2);
+  filter: brightness(1.06);
+}
+
+.one-tap-used-btn:hover .btn-check-icon {
+  transform: scale(1.18) rotate(-6deg);
+}
+
+.btn-check-icon {
+  transition: transform 0.26s var(--md-ease-spring);
+}
+
+.one-tap-used-btn:active {
+  transform: scale(0.93);
+  border-radius: var(--md-shape-md);
+}
+
+.m3-icon-btn,
+.card-action-icon-btn {
+  transition:
+    transform 0.28s var(--md-ease-spring),
+    border-radius 0.26s var(--md-ease-spring),
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.m3-icon-btn:hover,
+.card-action-icon-btn:hover {
+  transform: translateY(-2px) scale(1.06);
+}
+
+#theme-toggle-btn:hover svg {
+  transform: rotate(22deg) scale(1.08);
+}
+
+#theme-toggle-btn svg {
+  transition: transform 0.34s var(--md-ease-spring);
+}
+
+.m3-icon-btn:active,
+.card-action-icon-btn:active {
+  transform: scale(0.86);
+  border-radius: var(--md-shape-md);
+}
+
+.m3-fab {
+  transition:
+    transform 0.3s var(--md-ease-spring),
+    border-radius 0.3s var(--md-ease-spring),
+    box-shadow 0.25s ease,
+    background-color 0.2s ease;
+}
+
+.m3-fab svg {
+  transition: transform 0.32s var(--md-ease-spring);
+}
+
+.m3-fab:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-radius: var(--md-shape-pill);
+}
+
+.m3-fab:hover svg {
+  transform: rotate(90deg) scale(1.1);
+}
+
+.m3-fab:active {
+  transform: scale(0.92);
+}
+
+.copy-code-btn {
+  transition:
+    transform 0.25s var(--md-ease-spring),
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.copy-code-btn:hover {
+  transform: scale(1.06);
+  background-color: color-mix(in srgb, var(--md-sys-color-primary) 22%, transparent);
+}
+
+.copy-code-btn.is-copied {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  transform: scale(1.08);
+}
+
+.urgency-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--md-sys-color-warning);
+  display: inline-block;
+  animation: urgencyPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes urgencyPulse {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   Android Expiry Notification Bell & Settings Modal
+   ========================================================================== */
+.notify-active-dot {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--md-sys-color-active);
+  border: 1.5px solid var(--md-sys-color-surface-container);
+}
+
+#notify-settings-btn:hover svg {
+  animation: bellRing 0.48s var(--md-ease-spring);
+}
+
+@keyframes bellRing {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(16deg); }
+  55% { transform: rotate(-14deg); }
+  80% { transform: rotate(8deg); }
+}
+
+.notify-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.notify-card-heading {
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: 2px;
+}
+
+.notify-days-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.notify-days-grid .m3-filter-chip {
+  justify-content: center;
+}
+
